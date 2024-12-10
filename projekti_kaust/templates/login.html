@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisselogimine</title>
+</head>
+<body>
+    <h1>Sisselogimine</h1>
+    
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    <form method="POST">
+        <label for="username">Kasutajanimi:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Parool:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Logi sisse</button>
+    </form>
+</body>
+</html>
