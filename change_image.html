@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+</head>
+<body>
+    <h1>Laadi üles pilt</h1>
+    <form action="/change_image" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">Laadi üles</button>
+    </form>
+
+    {% if image_url %}
+    <h2>Praegune pilt:</h2>
+    <img src="{{ image_url }}" alt="Uploaded Image" style="max-width: 320px; max-height: 240px;">
+    {% else %}
+    <h2>Vaikepilt:</h2>
+    <img src="static/default_image.jpg" alt="Default Image" style="max-width: 320px; max-height: 240px;">
+    {% endif %}
+</body>
+</html>
+
